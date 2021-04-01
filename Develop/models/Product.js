@@ -8,9 +8,40 @@ class Product extends Model {}
 
 // set up fields and rules for Product model
 Product.init(
-  {
-    // define columns
-  },
+  sequelize.define(
+    "Product",
+    {
+      id: {
+        // define columns
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        autoIncrement: true,
+        primaryKey: true,
+      },
+      product_name: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
+      price: {
+        type: DataTypes.DECIMAL,
+        allowNull: false,
+        validate:{
+          isDecimal: true,
+        },
+      },
+      stock: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        defaultValue: '10',
+        validate:{
+          isNumeric: true,
+        },
+      },
+      category_id: {
+        type: DataTypes.INTEGER,
+      //HOW DO I REFERENCE THE CATEGORY MODEL'S ID?  
+      },
+     }, 
   {
     sequelize,
     timestamps: false,
@@ -18,6 +49,6 @@ Product.init(
     underscored: true,
     modelName: 'product',
   }
-);
+));
 
 module.exports = Product;
