@@ -4,5 +4,5 @@
 
 https://github.com/Danomiterock/ORM-E-Commerce-Back-End.git
 
-https://youtu.be/zLWoUuEbraI
+https://share.vidyard.com/watch/ExUc6SNYxXX6LNhyJQ4isL?
 
