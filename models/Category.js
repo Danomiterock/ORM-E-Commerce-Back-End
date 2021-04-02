@@ -1,13 +1,11 @@
 const { Model, DataTypes, INTEGER } = require("sequelize");
 
-const sequelize = require("../config/connection.js");
+const sequelize = require("../config/config.js");
 
 class Category extends Model {}
 
 Category.init(
-  sequelize.define(
-    "Category",
-    {
+     {
       id: {
         // define columns
         type: DataTypes.INTEGER,
@@ -27,7 +25,6 @@ Category.init(
       underscored: true,
       modelName: "category",
     }
-  )
-);
+  );
 
 module.exports = Category;
