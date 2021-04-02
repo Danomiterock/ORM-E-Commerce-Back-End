@@ -28,7 +28,7 @@ router.get('/:id', (req, res) => {
           model: Tag,
           through: ProductTag
         }
-      ],,
+      ],
   }).then((productData) =>{
     res.json(productData);
   });
